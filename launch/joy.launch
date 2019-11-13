@@ -1,0 +1,15 @@
+<launch>
+
+ <!-- Listener Node-->
+  <node pkg="gcode_sender" type="listener.py" name="gcode_listener"/>
+
+ <!-- Joy node -->
+  <node respawn="true" pkg="joy"
+        type="joy_node" name="gcode_joy" >
+    <param name="dev" type="string" value="/dev/input/js0" />
+    <param name="deadzone" value="0.1" />
+    <param name="autorepeat_rate" value="10.0" />
+    <param name="coalesce_interval" value="0.1" />
+  </node>
+
+</launch>
