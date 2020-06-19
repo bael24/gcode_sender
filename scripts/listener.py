@@ -33,7 +33,6 @@ def callbackJoy(data):
 def listener():
     rospy.init_node('listener', anonymous = True) # Initialize node
     rospy.Subscriber('position', Command, callback) # Create Subscriber
-    rospy.Subscriber('joy', Joy, callbackJoy) # Create Joystick subscriber
     rospy.spin() # Wait for shutdown
 
 def openGRBL():
